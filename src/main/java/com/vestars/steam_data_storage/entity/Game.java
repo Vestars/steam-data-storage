@@ -1,23 +1,18 @@
 package com.vestars.steam_data_storage.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Game {
     @Id
-    private Long appId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @Column(unique = true)
     private String name;
-    private String developer;
-    private String publisher;
-    private String releaseDate;
-    private Double price;
+    private String imageUrl;
 }
