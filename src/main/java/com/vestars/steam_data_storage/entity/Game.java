@@ -14,5 +14,6 @@ public class Game {
     private Long id;
     @Column(unique = true)
     private String name;
+    @Column
     private String imageUrl;
 }
